@@ -53,4 +53,20 @@ let myUser: User3 = {
 // readonly values cannot be reassigned
 // myUser._id = "54jti506imfp4";
 myUser.name = "bowen";
+
+// mix and match of types
+
+type cardNumber = {
+   cardnumber: string;
+
+}
+
+type cardDate = {
+   carddate: string
+}
+// make a type using extisting types
+type cardDetails = cardNumber & cardDate & {
+   cvv: number
+}
+
 export {}
