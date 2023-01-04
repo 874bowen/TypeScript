@@ -20,3 +20,13 @@ function createUser2(user) {
     return user;
 }
 createUser2({ name: "", email: "", isActive: true });
+var myUser = {
+    _id: "1e13rwkork844",
+    name: "ivan",
+    email: "ivan@gmail.com",
+    isActive: true
+};
+// ? allows the field to be null
+// readonly values cannot be reassigned
+// myUser._id = "54jti506imfp4";
+myUser.name = "bowen";

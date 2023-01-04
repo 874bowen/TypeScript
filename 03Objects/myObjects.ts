@@ -34,4 +34,23 @@ function createUser2 (user: User): User{
 
 createUser2({name: "", email: "", isActive: true})
 
+type User3 = {
+   readonly _id: string;
+   name: string;
+   email: string;
+   isActive: boolean;
+   credcardDetails?: number;
+}
+
+let myUser: User3 = {
+   _id: "1e13rwkork844",
+   name: "ivan",
+   email: "ivan@gmail.com",
+   isActive: true,
+   
+}
+// ? allows the field to be null
+// readonly values cannot be reassigned
+// myUser._id = "54jti506imfp4";
+myUser.name = "bowen";
 export {}
