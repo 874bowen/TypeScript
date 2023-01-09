@@ -24,11 +24,11 @@ var getHello = function (s) { return ""; };
 var heros = ["thor", "spiderman", "ironman"];
 // const heros = [1, 2, 3];
 heros.map(function (hero) {
-    return "hero is ".concat(hero);
+    console.log("hero is ".concat(hero));
 });
-function consoleError(errMsg) {
+function consoleError(errMsg){
     console.log(errMsg);
-    // return 1;
+    // return 1
 }
 function handleError(errMsg) {
     throw new Error(errMsg);
