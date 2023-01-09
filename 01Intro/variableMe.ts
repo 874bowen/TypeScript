@@ -12,5 +12,12 @@ userId2 = 545;
 // boolean
 let isLoggedIn: boolean = false;
 
+let hero;
+
+function getHero() {
+	return "thor";
+}
+
+hero = getHero();
 // remove the error temporarily
-export {}
+export {};
