@@ -11,12 +11,15 @@ interface User {
    getCoupon(couponName: string): number,
 }
 
-
+interface User {
+   githubToken: string
+}
 
 const ivan: User = { 
    dbId: 2343, 
    email: "ivan@gmail.com", 
    userId: 92394,
+   githubToken: "8weh8w9eujw9uw4",
    startTrial: () => {
       return "string";
    },
