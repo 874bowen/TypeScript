@@ -3,6 +3,8 @@ var ivan = {
     dbId: 2343,
     email: "ivan@gmail.com",
     userId: 92394,
+    githubToken: "8weh8w9eujw9uw4",
+    role: "teacher",
     startTrial: function () {
         return "string";
     },

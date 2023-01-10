@@ -15,11 +15,16 @@ interface User {
    githubToken: string
 }
 
-const ivan: User = { 
+interface Admin extends User{
+   role: "admin" | "teacher" | "learner"
+}
+
+const ivan: Admin = { 
    dbId: 2343, 
    email: "ivan@gmail.com", 
    userId: 92394,
    githubToken: "8weh8w9eujw9uw4",
+   role: "teacher",
    startTrial: () => {
       return "string";
    },
