@@ -55,3 +55,25 @@ let mixed = ['Ivan', 1, false]
 mixed = myTuple
 
 // myTuple = mixed
+
+// Objects
+let myObject: object;
+myObject = []
+console.log(typeof(myObject));
+
+type Guitarist = {
+   name: string
+   age: number
+   isAlive? : boolean
+   albums: (string | number)[]
+}
+const itb: Guitarist = {
+   name: "Ivan",
+   age: 20,
+   isAlive: true,
+   albums: [
+      12324,
+      "54wTkf34",
+      76
+   ]
+}

@@ -36,3 +36,17 @@ let myTuple = ['Dave', 42, true];
 let mixed = ['Ivan', 1, false];
 mixed = myTuple;
 // myTuple = mixed
+// Objects
+let myObject;
+myObject = [];
+console.log(typeof (myObject));
+const itb = {
+    name: "Ivan",
+    age: 20,
+    isAlive: true,
+    albums: [
+        12324,
+        "54wTkf34",
+        76
+    ]
+};
