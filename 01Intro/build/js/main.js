@@ -18,3 +18,7 @@ const sum = (a, b) => {
     return a + b;
 };
 console.log(sum(1, "r"));
+// union - not limited to two data types
+let postId;
+let isActive;
+let re = /\w+/g;

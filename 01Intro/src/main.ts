@@ -25,3 +25,8 @@ const sum = (a: number, b: string): string => {
 }
 
 console.log(sum(1, "r"));
+// union - not limited to two data types
+let postId: number | string;
+let isActive: number | Boolean;
+
+let re: RegExp = /\w+/g
