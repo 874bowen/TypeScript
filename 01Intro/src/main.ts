@@ -61,14 +61,16 @@ let myObject: object;
 myObject = []
 console.log(typeof(myObject));
 
-type Guitarist = {
-   name: string
+interface Guitarist {
+   firstName: string
+   lastName?:string
    age: number
    isAlive? : boolean
    albums: (string | number)[]
 }
 const itb: Guitarist = {
-   name: "Ivan",
+   firstName: "Ivan",
+   lastName: "Bowen",
    age: 20,
    isAlive: true,
    albums: [
@@ -77,3 +79,22 @@ const itb: Guitarist = {
       76
    ]
 }
+
+const greetGuitarist = (guitarist: Guitarist): string => {
+   if (guitarist.lastName) return `Hello, ${guitarist.lastName}`;
+   return  `Hello!`;
+}
+
+console.log(greetGuitarist(itb));
+
+// Enums - not type-level but added to TypeScript
+
+enum Grade {
+   U,
+   D,
+   C,
+   B,
+   A,
+}
+
+console.log(Grade.U);
