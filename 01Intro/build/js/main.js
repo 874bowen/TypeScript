@@ -8,7 +8,7 @@
 // TypeScript can infer the type - implicit
 let myName = "Ivan Bowen";
 let album;
-// explicit stating 
+// explicit stating
 let myAge = 20;
 let isHappy;
 isHappy = true;
@@ -23,37 +23,33 @@ let postId;
 let isActive;
 let re = /\w+/g;
 // arrays
-let stringArr = ['one', 'two', 'three'];
-let guitars = ['Strat', 'bee', 123];
-let mixedData = ['EDU', 2323, true];
-stringArr[0] = 'John';
-stringArr.push('hey');
+let stringArr = ["one", "two", "three"];
+let guitars = ["Strat", "bee", 123];
+let mixedData = ["EDU", 2323, true];
+stringArr[0] = "John";
+stringArr.push("hey");
 guitars.unshift(8);
 console.log(guitars);
 let test = [];
 // TUPLES : when you want an element type to be tied to a certain position of a list
-let myTuple = ['Dave', 42, true];
-let mixed = ['Ivan', 1, false];
+let myTuple = ["Dave", 42, true];
+let mixed = ["Ivan", 1, false];
 mixed = myTuple;
 // myTuple = mixed
 // Objects
 let myObject;
 myObject = [];
-console.log(typeof (myObject));
+console.log(typeof myObject);
 const itb = {
     firstName: "Ivan",
     lastName: "Bowen",
     age: 20,
     isAlive: true,
-    albums: [
-        12324,
-        "54wTkf34",
-        76
-    ]
+    albums: [12324, "54wTkf34", 76],
 };
 const greetGuitarist = (guitarist) => {
     if (guitarist.lastName)
-        return `Hello, ${guitarist.lastName}`;
+        return `Hello, ${guitarist.lastName.toLowerCase()}`;
     return `Hello!`;
 };
 console.log(greetGuitarist(itb));
@@ -67,3 +63,41 @@ var Grade;
     Grade[Grade["A"] = 4] = "A";
 })(Grade || (Grade = {}));
 console.log(Grade.U);
+const it = {
+    firstName: "Ivan",
+    isActive: true,
+    albums: [12324, "54wTkf34", 76],
+};
+// Literal types
+let theGrade;
+theGrade = "A";
+// functions for no return
+const logMessage = (message) => {
+    console.log(message);
+};
+logMessage("some people!");
+// interface mathFunction {
+//    (a: number, b: number): number
+// }
+const subtract = (a, b) => {
+    return a - b;
+};
+logMessage(subtract(10, 43));
+// optional params
+const addAll = (a, b, c) => {
+    if (typeof c !== "undefined")
+        return a + b + c;
+    return a + b;
+};
+// default param value
+const sumAll = (a = 600, b, c = 2) => {
+    return a + b + c;
+};
+logMessage(addAll(10, 43));
+logMessage(sumAll(10, 43));
+logMessage(sumAll(undefined, 10, 43));
+// Rest parameters
+const total = (a, ...nums) => {
+    return nums.reduce((prev, curr) => prev + curr);
+};
+logMessage(total(1, 2, 3, 4));
