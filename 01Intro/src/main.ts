@@ -30,3 +30,28 @@ let postId: number | string;
 let isActive: number | Boolean;
 
 let re: RegExp = /\w+/g
+
+// arrays
+let stringArr: string[] = ['one', 'two', 'three']
+
+let guitars: (string | number)[] = ['Strat', 'bee', 123]
+
+let mixedData: (string | number | Boolean)[] = ['EDU', 2323, true]
+
+stringArr[0] = 'John'
+
+stringArr.push('hey')
+
+guitars.unshift(8)
+console.log(guitars);
+
+let test = []
+
+// TUPLES : when you want an element type to be tied to a certain position of a list
+let myTuple: [string, number, boolean] = ['Dave', 42, true]
+
+let mixed = ['Ivan', 1, false]
+
+mixed = myTuple
+
+// myTuple = mixed
