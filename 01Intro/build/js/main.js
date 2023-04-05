@@ -7,7 +7,14 @@
 */
 // TypeScript can infer the type - implicit
 let myName = "Ivan Bowen";
+let album;
 // explicit stating 
 let myAge = 20;
 let isHappy;
 isHappy = true;
+album = true;
+album = 1;
+const sum = (a, b) => {
+    return a + b;
+};
+console.log(sum(1, "r"));

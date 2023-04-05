@@ -8,9 +8,20 @@
 // TypeScript can infer the type - implicit
 let myName = "Ivan Bowen"
 
+let album: any;
+
 // explicit stating 
-let myAge: number = 20
+let myAge: number = 20;
 
 let isHappy: Boolean;
 
 isHappy = true;
+
+album = true;
+album = 1;
+
+const sum = (a: number, b: string): string => {
+   return a + b;
+}
+
+console.log(sum(1, "r"));
