@@ -101,3 +101,48 @@ const total = (a, ...nums) => {
     return nums.reduce((prev, curr) => prev + curr);
 };
 logMessage(total(1, 2, 3, 4));
+// Type Never
+const createError = (errMsg) => {
+    throw new Error(errMsg);
+};
+const infinite = () => {
+    let i = 1;
+    while (true) {
+        i++;
+        console.log(i);
+        // if (i > 4) break;
+    }
+};
+const checkType = (value, type) => {
+    return typeof value === type ? true : false;
+};
+const numberOrString = (value) => {
+    if (checkType(value, "string"))
+        return "string";
+    if (checkType(value, "number"))
+        return "number";
+    return createError("This should never happen");
+};
+logMessage(numberOrString(3));
+// convert to more or less specific 
+let a = 'hello';
+let b = a; // less specific
+let c = a; // more specific
+let d = 'world'; // type One but has value 'world'
+let e = 'world';
+// Narrowing
+const addOrConcat = (a, b, c) => {
+    if (c === 'add')
+        return a + b;
+    return '' + a + b;
+};
+let myVal = addOrConcat(2, 2, 'concat');
+// NB: TS believes is  either when it is concat or add so be carefull
+// let nextVal: number = addOrConcat(2, 2, 'concat') as number
+let nextVal = addOrConcat(2, 2, 'add');
+// The DOM
+const img = document.querySelector('img');
+const myImg = document.getElementById('img');
+const ourImg = document.getElementById('img');
+img.src;
+myImg.src;

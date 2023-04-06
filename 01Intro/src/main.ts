@@ -141,7 +141,7 @@ const addAll = (a: number, b: number, c?: number) => {
 };
 
 // default param value
-const sumAll = (a: number  = 600, b: number, c: number = 2) => {
+const sumAll = (a: number = 600, b: number, c: number = 2) => {
 	return a + b + c;
 };
 
@@ -150,8 +150,70 @@ logMessage(sumAll(10, 43));
 logMessage(sumAll(undefined, 10, 43));
 
 // Rest parameters
-const total = (a:number, ...nums: number[]): number => {
-	return nums.reduce((prev, curr) => prev + curr)
+const total = (a: number, ...nums: number[]): number => {
+	return nums.reduce((prev, curr) => prev + curr);
+};
+
+logMessage(total(1, 2, 3, 4));
+
+// Type Never
+const createError = (errMsg: string): never => {
+	throw new Error(errMsg);
+};
+
+const infinite = () => {
+	let i: number = 1;
+	while (true) {
+		i++;
+		console.log(i);
+		// if (i > 4) break;
+	}
+};
+
+type CheckType = (value: any, type: string) => boolean;
+
+const checkType: CheckType = (value: any, type: string): boolean => {
+	return typeof value === type ? true : false;
+};
+
+const numberOrString = (value: stringOrNumber): string => {
+	if (checkType(value, "string")) return "string";
+	if (checkType(value, "number")) return "number";
+	return createError("This should never happen");
+};
+
+logMessage(numberOrString(3));
+
+// Type assertions
+type One = string
+type Two = stringOrNumber
+type Three = 'hello'
+
+// convert to more or less specific 
+let a: One = 'hello'
+let b = a as Two; // less specific
+let c = a as Three; // more specific
+
+let d = <One>'world' // type One but has value 'world'
+let e = <stringOrNumber>'world'
+
+// Narrowing
+
+const addOrConcat = (a: number, b: number, c: 'add' | 'concat'): stringOrNumber => {
+	if (c === 'add') return a + b;
+	return '' + a + b;
 }
 
-logMessage(total(1, 2, 3, 4))
+let myVal: string = addOrConcat(2, 2, 'concat') as string
+
+// NB: TS believes is  either when it is concat or add so be carefull
+// let nextVal: number = addOrConcat(2, 2, 'concat') as number
+let nextVal: number = addOrConcat(2, 2, 'add') as number
+
+// The DOM
+const img = document.querySelector('img')!
+const myImg = document.getElementById('img') as HTMLInputElement
+const ourImg = <HTMLInputElement>document.getElementById('img')
+
+img.src
+myImg.src
